@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h1>Noticias</h1>
+	{% for entrada in object_list %}
+		<table class="bordered">
+        <tbody>
+          <tr>
+            <td><div class="chip {{ entrada.colorEtiqueta }} "> {{ entrada.etiqueta }} </div></td>
+            <td> {{ entrada.titulo }} </td>
+            <td> {{ entrada.fecha }} </td>
+          </tr>
+          </tr>
+        </tbody>
+      </table>
+	{% endfor %}
+{% endblock content %}
