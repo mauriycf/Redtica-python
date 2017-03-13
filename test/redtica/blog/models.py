@@ -25,9 +25,8 @@ class Categoria(models.Model):
 
 
 class Entrada(models.Model):
-	nombre = models.CharField("Nombre", max_length=255)
-	slug = models.SlugField("Slug", max_length=255)
 	titulo = models.CharField(max_length=300)
+	slug = models.SlugField("Slug", max_length=255)
 	contenido = models.TextField(
 			'Contenido',
 			help_text='Contenido de la página',
