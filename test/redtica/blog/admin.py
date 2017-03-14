@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from draceditor.widgets import AdminDraceditorWidget
 
-from .models import Entrada,Categoria
+from .models import Entrada,Categoria,Color
 
 class YourModelAdmin(admin.ModelAdmin):
     formfield_overrides = {
@@ -23,3 +23,4 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Entrada, YourModelAdmin)
 
 admin.site.register(Categoria, CategoryAdmin)
+admin.site.register(Color)

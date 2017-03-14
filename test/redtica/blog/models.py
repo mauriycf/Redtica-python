@@ -15,13 +15,19 @@ class Categoria(models.Model):
 		verbose_name_plural = 'Categorías'
 		ordering = ['-created_at']
 
-	def __unicode__(self):
-		return self.name
+	def __str__(self):
+		return self.nombre
 
 	def save(self, *args, **kwargs):
 		if not self.id:
 			self.slug = slugify(self.nombre)
 		super(Categoria, self).save(*args, **kwargs)
+
+class Color(models.Model):
+	nombre = models.CharField(max_length=255)
+
+	def __str__(self):
+		return self.nombre
 
 
 class Entrada(models.Model):
@@ -33,11 +39,12 @@ class Entrada(models.Model):
 			blank=True
 		)
 	etiqueta = models.ForeignKey(Categoria)
+	colores = models.ForeignKey(Color)
 	active = models.BooleanField("Activo", default=True)
 	created_at = models.DateTimeField("Creado el", auto_now_add=True)
 	updated_at = models.DateTimeField("Actualizado el", auto_now=True)
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.titulo
 
 	def save(self, *args, **kwargs):
@@ -49,3 +56,4 @@ class Entrada(models.Model):
 		verbose_name='Entrada'
 		verbose_name_plural = 'Entradas'
 		ordering = ['-created_at']
+

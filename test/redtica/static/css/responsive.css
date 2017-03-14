@@ -1,0 +1,19 @@
+@media (max-width: 768px)
+{
+	.container .cintillo
+	{
+		width: 360px;
+	}
+	.algo
+	{
+		display: none;
+	}
+}
+
+.dropdown-content{
+	margin-top: 64px;
+}
+
+nav .dropdown-content li a:hover{
+	background: #2196f3;
+}
