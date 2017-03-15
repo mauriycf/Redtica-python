@@ -1,0 +1,17 @@
+.dropdown-content{
+	margin-top: 64px;
+}
+
+nav .dropdown-content li a:hover{
+	background: #2196f3;
+}
+
+#logo
+{
+	margin-left: 80px;
+}
+
+#logo-slider
+{
+	width: 15%;
+}

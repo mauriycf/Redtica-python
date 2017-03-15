@@ -1,6 +1,8 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
+from ckeditor.fields import RichTextField
+
 # Create your models here.
 
 class Categoria(models.Model):
@@ -33,7 +35,7 @@ class Color(models.Model):
 class Entrada(models.Model):
 	titulo = models.CharField(max_length=300)
 	slug = models.SlugField("Slug", max_length=255)
-	contenido = models.TextField(
+	contenido = RichTextField(
 			'Contenido',
 			help_text='Contenido de la página',
 			blank=True

@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="/static/css/footer.css">
     <link rel="stylesheet" href="/static/css/noticias.css">
+    <link rel="stylesheet" href="/static/css/menu.css">
     <link rel="stylesheet" href="/static/css/responsive.css">
   </head>
   <body>
@@ -27,9 +28,9 @@
         <li><a class="white-text" href="?view=referencias">Referencias</a></li>
         <li><a class="white-text" href="?view=patrocinadores">Patrocinadores</a></li>
       </ul>
-      <nav class="blue darken-3">
+      <nav class="blue darken-3 z-depth-5">
         <div class="nav-wrapper container">
-          <a href="#!" class="brand-logo left"><img src="/static/images/logootic1.png" alt=""></a>
+          <a href="#!" id="logo" class="brand-logo left">Redtica</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="/">Inicio</a></li>
@@ -86,11 +87,16 @@
           </ul>
         </div>
       </div>
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+      </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-        © 2014 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        © {% now "Y" %} Responsable: Heredia, Alejandro
       </div>
     </div>
   </footer>

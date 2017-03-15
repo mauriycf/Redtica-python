@@ -17,14 +17,23 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.conf.urls import url, include
 
-from blog.views import IndexView, EntradaDetailView
+"""url(r'^$', IndexView.as_view()),
+    url(r'^entrada/(?P<slug>[-\w]+)/$', EntradaDetailView.as_view()),"""
+
+"""from blog.views import IndexView, EntradaDetailView"""
+from blog.views import(
+    post_list,
+    post_detail,
+    )
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^draceditor/', include('draceditor.urls')),
-    url(r'^$', IndexView.as_view()),
-    url(r'^entrada/(?P<slug>[-\w]+)/$', EntradaDetailView.as_view()),
+    url(r'^$', post_list),
+    url(r'^entrada/(?P<slug>[-\w]+)/$', post_detail),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG:
