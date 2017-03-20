@@ -24,16 +24,18 @@ from django.conf.urls import url, include
 
 """from blog.views import IndexView, EntradaDetailView"""
 from blog.views import(
-    post_list,
+    index,
     post_detail,
+    post_list,
     )
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^draceditor/', include('draceditor.urls')),
-    url(r'^$', post_list),
+    url(r'^$', index),
     url(r'^entrada/(?P<slug>[-\w]+)/$', post_detail),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^$noticias/', post_list),
 ]
 
 if settings.DEBUG:

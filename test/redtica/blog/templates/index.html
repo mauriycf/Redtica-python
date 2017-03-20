@@ -11,13 +11,6 @@
         </div>
       </li>
       <li>
-        <img src="/static/images/background-yellow.png"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
-      </li>
-      <li>
         <img src="/static/images/background-blue.jpg"> <!-- random image -->
         <div class="caption right-align">
           <h3>Right Aligned Caption</h3>
@@ -37,18 +30,6 @@
     <div class="row">
       <div class="col s12 m9 l10">
         <div id="introduction" class="section scrollspy">
-          <h2>Noticias</h2>
-          <table class="bordered">
-            <tbody>
-              {% for entrada in object_list %}
-                <tr>
-                  <td><div class="chip {{ entrada.colores }} z-depth-3"><a href="{{ entrada.slug }}" class="white-text"> {{ entrada.etiqueta }} </a> </div></td>
-                  <td> <a href="/entrada/{{entrada.slug}}/">{{ entrada.titulo }}</a> </td>
-                  <td class="hide-on-small-only"> {{ entrada.created_at }} </td>
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>
         </div>
         <div id="structure" class="section scrollspy">
           <p>Content </p>
@@ -66,4 +47,5 @@
       </div>
     </div>
   </div>
+  
 {% endblock content %}

@@ -2,8 +2,8 @@
 {% block content %}
   <div class="container">
   <div class="card-panel z-depth-5">
-    <h2>{{ instance.titulo }}</h2>
-    {{ instance.contenido|safe }}
+    <h2 class="light italic">{{ instance.titulo }}</h2>
+    <p class="condensed">{{ instance.contenido|safe }}</p>
     </div>
   </div>
 {% endblock content %}

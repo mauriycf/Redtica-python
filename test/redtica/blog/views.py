@@ -15,14 +15,20 @@ class EntradaDetailView(DetailView):
 	template_name = 'entrada_detail.html'
 	model = Entrada"""
 
-def post_list(request):
-	queryset = Entrada.objects.all()
+def index(request):
 	context = {
-		"object_list": queryset,
-		"title": "Redtica"
+		"template_name": "index.html",
 	}
 
 	return render(request, "index.html", context)
+
+def post_list(request):
+	context = {
+		"template_name": "post_list.html",
+		"queryset": Entrada.object.all(),
+	}
+
+	return render(request, "post_list.html", context)
 
 def post_detail(request, slug=None):
 	instance = get_object_or_404(Entrada, slug=slug)
@@ -32,3 +38,4 @@ def post_detail(request, slug=None):
 	}
 
 	return render(request, "entrada_detail.html", context)
+

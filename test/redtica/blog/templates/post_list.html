@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h2 class="light italic">Noticias</h2>
+	<table class="bordered">
+		<tbody>
+			{% for entrada in queryset %}
+				<tr>
+					<td><div class="chip {{ entrada.colores }} z-depth-3"><a href="/categoria/{{ entrada.etiqueta.slug }}" class="white-text"> {{ entrada.etiqueta }} </a> </div></td>
+					<td> <a href="/entrada/{{entrada.slug}}/">{{ entrada.titulo }}</a> </td>
+					<td class="hide-on-small-only"> {{ entrada.created_at }} </td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock content %}
